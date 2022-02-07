@@ -19,5 +19,10 @@ export async function main(ns) {
 		}
 	}
 
-	ns.tprint(parents);
+	let tabulation = "";
+	ns.tprint(parents[0]);
+	for (let i=1;i<parents.length;i++) {
+		tabulation += " ";
+		ns.tprint(tabulation + parents[i]);
+	}
 }
