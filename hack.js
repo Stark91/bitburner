@@ -13,7 +13,6 @@ export async function main(ns) {
 		ns.print("Server " + sServer + " - Money : " + ns.nFormat(iServerMoneyAvailable, "$0,0[.]00a") + " / " + ns.nFormat(iServerMaxMoney, "$0,0[.]00a") + " - Security : " + ns.nFormat(iServerSecurityLevel, "0[.]0") + " / 100");
 
 		if (iServerSecurityLevel > Math.min(35, Math.max(1, ns.getServer(sServer).baseDifficulty / 3, ns.weakenAnalyze(runningScriptInformations.threads, homeInformations.cpuCores)))) {
-		if (iServerSecurityLevel > 5) {
 			ns.print("Weakening... " + ns.nFormat(ns.getWeakenTime(sServer) / 1000, "00:00:00"));
 			ns.print("Security decrease by " + await ns.weaken(sServer));
 			await ns.weaken(sServer);
