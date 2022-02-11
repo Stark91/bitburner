@@ -1,8 +1,8 @@
 /** @param {NS} ns **/
 export async function main(ns) {
-	var iNumHacknetNodes = ns.hacknet.numNodes();
 
 	while (true) {
+	var iNumHacknetNodes = ns.hacknet.numNodes();
 		if (iNumHacknetNodes > 0) {
 			var iPrice = ns.hacknet.getPurchaseNodeCost();
 			ns.print("iPrice=" + iPrice);
