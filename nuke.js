@@ -9,6 +9,6 @@ export async function main(ns) {
 	var servers = getAllServers(ns);
 
 	for (let server of servers) {
-		nukeServer(ns, server);
+		nukeServer(ns, server.hostname);
 	}
 }
