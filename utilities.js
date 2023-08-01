@@ -1,13 +1,15 @@
 /** @param {NS} ns **/
 export function getAllServers(ns) {
 	var servers = [];
-	servers.push("home");
+	var dist = 0;
+	servers.push({ hostname: "home", range: dist, parent: "N/A" });
 
 	for (let server of servers) {
-		let serversScan = ns.scan(server);
+		dist = server.range + 1;
+		let serversScan = ns.scan(server.hostname);
 		for (let serverScan of serversScan) {
-			if (servers.findIndex(s => s === serverScan) === -1) {
-				servers.push(serverScan);
+			if (servers.findIndex(s => s.hostname === serverScan) === -1) {
+				servers.push({ hostname: serverScan, range: dist, parent: server.hostname});
 			}
 		}
 	}
